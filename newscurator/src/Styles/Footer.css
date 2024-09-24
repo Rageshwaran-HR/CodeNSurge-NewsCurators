@@ -12,7 +12,9 @@ ul {
   position: relative;
 }
 .footer-cta {
+  display: flex;
   border-bottom: 1px solid #373636;
+  flex-direction: column;
 }
 .single-cta i {
   color: #B6E002;

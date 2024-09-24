@@ -1,0 +1,215 @@
+.bg {
+  position: relative;
+  z-index: 1; /* Ensure this is above other components if needed */
+}
+
+.card {
+  width: 350px;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative; /* Relative positioning is fine here */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: box-shadow 300ms;
+  z-index: 2; /* Ensure this is above other elements */
+}
+
+.card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card:hover {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover .subtitle{
+  display: none;
+}
+
+.card .thumb {
+  position: relative; /* Ensure that the image is positioned relative to this container */
+  width: 100%;
+  padding-top: 60%; /* Maintain aspect ratio (e.g., 370x235 is approximately 60% for height) */
+  background-color: black;
+  overflow: hidden;
+  transition: height 300ms;
+}
+
+.card .thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container and maintains aspect ratio */
+  transition: opacity 300ms, transform 300ms;
+}
+
+.card:hover .thumb {
+  height: 90px;
+}
+
+.card:hover .thumb img {
+  opacity: 0.6;
+  transform: scale(1.2);
+}
+
+.card:hover .body {
+  height: 330px;
+}
+
+.card:hover .body .description {
+  transition-delay: 0.1s;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card .date {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  padding-top: 10px;
+  background-color: #EF5A31;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  line-height: 13px;
+  font-weight: bold;
+}
+
+.card .date .day {
+  display: block;
+  font-size: 14px;
+}
+
+.card .date .month {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.card .body {
+  position: relative;
+  padding: 20px;
+  height: 185px;
+  transition: height 300ms;
+}
+
+.card .body .category {
+  position: absolute;
+  height: 25px;
+  left: 0;
+  top: -25px;
+  padding: 0 15px;
+  background-color: #EF5A31;
+  line-height: 25px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.card .body .title {
+  margin: 0;
+  padding: 0 0 10px 0;
+  font-size: 22px;
+  color: black;
+  font-weight: bold;
+}
+
+.card .body .subtitle {
+  color: #EF5A31;
+  padding: 0 0 10px 0;
+  font-size: 19px;
+  margin: 0;
+}
+
+.card .body .description {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 65px;
+  margin: 0;
+  padding: 0;
+  color: #666c74;
+  font-size: 14px;
+  line-height: 27px;
+  opacity: 0;
+  transition: opacity 200ms, transform 200ms;
+  transform: translateY(25px);
+}
+
+.card .footer {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  font-size: 11px;
+  color: #A3A9AB;
+}
+
+.card .footer .icon-comment {
+  margin-left: 2px;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+@media (max-width: 769px) {
+  /* Adjust the container to display one card per row if needed */
+  .card-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+  }
+
+  /* Ensure each card takes up more width on medium screens */
+  .card {
+    width: 80%; /* Adjust width to be more prominent */
+    width: 450px; /* Increase max-width for larger cards */
+    margin: 0 auto 20px auto; /* Center the card and add bottom margin */
+  }
+
+  /* Adjust thumbnail for medium screens */
+  .card .thumb {
+    padding-top: 55%; /* Adjust padding-top for medium screen aspect ratio */
+  }
+
+  /* Adjust the date badge */
+  .card .date {
+    width: 45px; /* Increase the size of the date badge */
+    height: 45px;
+    top: 15px;
+    right: 15px;
+  }
+
+  /* Category badge adjustments */
+  .card .body .category {
+    font-size: 20px; /* Decrease font size of the category badge */
+    padding: 0 15px;
+  }
+
+  /* Reduce title and subtitle font sizes for better readability */
+  .card .body .title {
+    font-size: 22px; /* Decrease title font size */
+  }
+
+  .card .body .subtitle {
+    font-size: 20p; /* Decrease subtitle font size */
+  }
+
+  /* Description text size and line-height adjustments */
+  .card .body .description {
+    font-size: 14px; /* Adjust description font size */
+    line-height: 23px; /* Adjust line-height for readability */
+  }
+
+  /* Footer font size adjustment */
+  .card .footer {
+    font-size: 10px; /* Adjust footer font size */
+  }
+}

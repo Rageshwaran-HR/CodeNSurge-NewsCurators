@@ -5,12 +5,16 @@ import {
   Route,
   useParams,
 } from "react-router-dom";
+import NewsDetails from "./pages/NewsDetails";
 import Navbar from "./components/Navbar";
+import Carousel from "./components/Carousel";
+import CardContainer from "./components/CardContainer";
+import NewsVideoContainer from "./components/NewsVideoContainer";
+import NewsList from "./components/newslist";
 import Footer from "./components/Footer"; // Ensure this matches exactly
 import "./Styles/Layout.css"; // Ensure this includes the styles for the floating widget
 import WeatherDetails from "./components/WeatherData";
 import MarketChartWidget from "./components/stockmarket";
-import Carousel from "./components/Carousel";
 
 const CategoryPage = () => {
   const { category } = useParams();
@@ -36,6 +40,11 @@ const CategoryPage = () => {
         async
         src="https://app3.weatherwidget.org/js/?id=ww_c289b208976c5"
       ></script>
+      <CardContainer category={category} />
+      <div className="layout-container">
+        <NewsList category={category} />
+        <NewsVideoContainer category={category} />
+      </div>
     </>
   );
 };
@@ -64,7 +73,6 @@ function App() {
                 <>
                   <Carousel />
                   <div
-                    style={{ "margin-bottom": "200px" }}
                     id="ww_c289b208976c5"
                     v="1.3"
                     loc="auto"
@@ -79,19 +87,29 @@ function App() {
                       Weather widget html
                     </a>
                   </div>
-                  <div className="layout-container"></div>
+                  <CardContainer />
+                  <div className="layout-container">
+                    <NewsList />
+                    <NewsVideoContainer category="top-news" />
+                  </div>
+                  <WeatherDetails />
+                  <div class="finlogix-containers">
+                    <div class="finlogix-container"></div>
+                  </div>
+                  <div hidden>
+                    <MarketChartWidget />
+                  </div>
                 </>
               }
             />
+            <Route path="/:category" element={<CategoryPage />} />
+            <Route path="/news/:id" element={<NewsDetails />} />
+            <Route
+              path="/videos"
+              element={<NewsVideoContainer category="videos" />}
+            />
           </Routes>
         </main>
-        <WeatherDetails />
-        <div class="finlogix-containers">
-          <div class="finlogix-container"></div>
-        </div>
-        <div hidden>
-          <MarketChartWidget />
-        </div>
         <Footer />
       </div>
     </Router>
