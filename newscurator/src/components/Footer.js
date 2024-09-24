@@ -19,11 +19,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <div className="footer-text">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
+                  <p>EXCLUSIVE FOR IAS ASPIRANTS !</p>
                 </div>
                 <div className="footer-social-icon">
                   <span>Follow us</span>
@@ -86,7 +82,12 @@ const Footer = () => {
                       <i className="fas fa-map-marker-alt"></i>
                       <div className="cta-text">
                         <h4>Find us</h4>
-                        <span>1010 Avenue, SW 54321, Chandigarh</span>
+                        <span>
+                          {" "}
+                          N0 6 Vivekanadar theru, Dubai kurukku sandhu,
+                          <br />
+                          dubai main road, Dubai
+                        </span>
                       </div>
                     </div>
                   </div>
