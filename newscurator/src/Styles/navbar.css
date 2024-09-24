@@ -1,0 +1,158 @@
+/* Navbar Styles */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0; /* No top margin needed */
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.header-logo {
+    width: 180px;
+    transition: transform 0.3s ease; /* Logo hover effect */
+}
+
+.header-logo:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-list-item {
+    margin-left: 20px;
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.menu-list-item:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.menu-link {
+    text-decoration: none;
+    color:#B6E002;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.menu-link:hover {
+    
+    background-color:#e7ff7c66;
+    color: #65e6ce; /* Primary blue color */
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease; /* Smooth transition for hamburger menu */
+}
+
+.hamburger div {
+    width: 30px; /* Increased width */
+    height: 3px;
+    background: #333; /* Darker color for visibility */
+    margin: 4px 0;
+    transition: transform 0.3s ease; /* Smooth transition for lines */
+}
+
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px); /* Cross icon */
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0; /* Hide middle line */
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px); /* Cross icon */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    .menu {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #fff;
+        padding: 10px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 220px; /* Slightly wider menu */
+        opacity: 1;
+        animation: slideIn 0.3s ease; /* Slide-in animation */
+    }
+
+    .menu-list {
+        margin: 0;
+    }
+
+    .menu-list-item {
+        margin-bottom: 10px;
+    }
+
+    .menu-link {
+        display: block;
+        padding: 10px 20px;
+        color: #333;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .menu-link:hover {
+        background-color: #f0f0f0;
+        color: #007bff;
+    }
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Adjust body margin to match the height of the navbar */
+body {
+    margin-top: 60px;
+}
