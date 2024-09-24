@@ -56,7 +56,14 @@ function App() {
     const [isPrf, setPrf] = useState(cookie.get('Pref'))
     const nav = ""
 
-    
+    // function googleTranslateElementInit() {
+    //     new google.translate.TranslateElement({
+    //         pageLanguage: 'ar',
+    //         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    //     }, 'google_translate_element');
+    // }
+
+
     useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://app3.weatherwidget.org/js/?id=ww_c289b208976c5";
@@ -75,7 +82,7 @@ function App() {
                 <main className="main-content relative">
                     {!isPrf ? (
                         // Registeration page
-                        <Pref setPrf={setPrf} />
+                        <Pref setPrf={setPrf}/>
                     ) : (<div></div>)}
                     <Routes>
                         <Route
