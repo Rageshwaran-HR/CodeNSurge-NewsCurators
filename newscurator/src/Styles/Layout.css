@@ -1,0 +1,52 @@
+.layout-container {
+    display: flex;
+    margin-top: -200px;
+    justify-content: space-between;
+  }
+  .floating-widget {
+    position: fixed;
+    right:0px;
+    z-index: 1000; 
+  }
+  
+  .layout-container > * {
+    box-sizing: border-box;
+  }
+  
+  .news-list {
+    flex: 0 0 75%; /* Flex-grow: 0, Flex-shrink: 0, Flex-basis: 75% */
+    padding-right: 20px; /* Optional: space between the two components */
+  }
+  
+  .news-video-container {
+    flex: 0 0 25%;
+   /* Flex-grow: 0, Flex-shrink: 0, Flex-basis: 25% */
+  }
+  .finlogix-container{
+    display: flex;
+    flex-direction: row;
+    flex: auto;
+    max-width:302px;
+    overflow-x:hidden ;
+  }
+  .finlogix-containers{
+    height:500px;
+    width:50%;
+  }
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .layout-container {
+      flex-direction: column; /* Stack the components vertically */
+    }
+  
+    .news-list, .news-video-container {
+      flex: 0 0 auto; /* Reset flex-basis to auto for vertical stacking */
+      width: 100%; /* Make both components take full width */
+      padding: 0; /* Remove padding for full width */
+    }
+  
+    .news-list {
+      margin-bottom: 20px; /* Optional: Add space between the components */
+    }
+  }
+  
