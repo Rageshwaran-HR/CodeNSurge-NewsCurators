@@ -10,11 +10,13 @@ import Footer from "./components/Footer"; // Ensure this matches exactly
 import "./Styles/Layout.css"; // Ensure this includes the styles for the floating widget
 import WeatherDetails from "./components/WeatherData";
 import MarketChartWidget from "./components/stockmarket";
+import Carousel from "./components/Carousel";
 
 const CategoryPage = () => {
   const { category } = useParams();
   return (
     <>
+      <Carousel />
       <div
         id="ww_c289b208976c5"
         v="1.3"
@@ -60,7 +62,9 @@ function App() {
               path="/"
               element={
                 <>
+                  <Carousel />
                   <div
+                    style={{ "margin-bottom": "200px" }}
                     id="ww_c289b208976c5"
                     v="1.3"
                     loc="auto"
@@ -75,8 +79,7 @@ function App() {
                       Weather widget html
                     </a>
                   </div>
-                  <div className="layout-container">
-                  </div>
+                  <div className="layout-container"></div>
                 </>
               }
             />
