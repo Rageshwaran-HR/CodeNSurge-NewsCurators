@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=New+Amsterdam&display=swap');
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 30px;
+  padding-right:-30px;
+  align-items: center;
+  padding-top: 230px;
+
+  max-height: 1400px;/* Ensure text is readable on the background */
+}
+/* cardContainer.css */
+
+.card-container-header {
+  
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative; /* Use relative positioning */
+  top: -210px; /* Move the header up by adjusting this value */
+}
+
+.header-title {
+  font-family: "Inknut Antiqua", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  transition: color 0.3s ease, transform 0.3s ease; /* Add transition for hover effect */
+  position: relative;
+}
+
+.header-title:hover {
+  color: #fc6c22; /* Change color on hover */
+  transform: scale(1.1); /* Slightly scale up on hover */
+}
+
+.sub-header {
+  font-family: "Inknut Antiqua", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #666;
+  margin: 5px 0 0 0;
+  opacity: 0.8; /* Add some transparency */
+  transition: opacity 0.3s ease; /* Add transition for hover effect */
+}
+
+.card-container-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #fc6c22, #ba4d03);
+  transform: translateX(-50%);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.card-container-header:hover::before {
+  transform: translateX(-50%) scaleX(1.2); /* Slightly scale the underline on hover */
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.card {
+  flex: 1;
+  min-width: 0;
+}
+
+/* For small screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: row; /* Stack all cards vertically */
+    overflow-y: auto; /* Enable vertical scrolling */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    scroll-snap-type: y mandatory; /* Smooth snapping when scrolling */
+  }
+
+  .card-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Edge */
+  }
+
+  .row {
+    flex-direction: row; /* Stack all cards in a single column */
+    gap: 16px;
+  }
+
+  .card {
+    scroll-snap-align: start; /* Ensure smooth snap scrolling */
+    margin-bottom: 16px;
+  }
+  .header-title {
+    font-size: 2.5rem; /* Adjust font size for tablets */
+  }
+
+  .sub-header {
+    font-size: 1.2rem; /* Adjust font size for tablets */
+  }
+
+}
+
+/* For large screens */
+@media (min-width: 769px) {
+  .card-container {
+    flex-wrap: wrap; /* Wrap cards into two rows for large screens */
+    gap: 16px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card {
+    margin-bottom: 16px;
+  }
+  .header-title {
+    font-size: 2rem; /* Adjust font size for mobile phones */
+  }
+
+  .sub-header {
+    font-size: 1rem; /* Adjust font size for mobile phones */
+  }
+}

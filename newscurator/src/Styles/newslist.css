@@ -1,0 +1,279 @@
+  @font-face {
+    font-family: Averta;
+    src: url(//d1yepz0pwej23y.cloudfront.net/assets/323/1nhh8Y1.otf) format("opentype");
+    src: url(//d1yepz0pwej23y.cloudfront.net/assets/323/27DSw06.eot) format('embedded-opentype'),url(//d1yepz0pwej23y.cloudfront.net/assets/323/P4KU09_.woff) format('woff'),url(//d1yepz0pwej23y.cloudfront.net/assets/323/1FVTx-8.ttf) format('truetype'),url(//d1yepz0pwej23y.cloudfront.net/assets/323/3AxC_ic.svg) format('svg');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Averta;
+    src: url(//d1yepz0pwej23y.cloudfront.net/assets/323/2fOxd0B.otf) format("opentype");
+    src: url(//d1yepz0pwej23y.cloudfront.net/assets/323/28Ften9.eot) format('embedded-opentype'),url(//d1yepz0pwej23y.cloudfront.net/assets/323/3O-AJ6r.woff) format('woff'),url(//d1yepz0pwej23y.cloudfront.net/assets/323/29yd1SE.ttf) format('truetype'),url(//d1yepz0pwej23y.cloudfront.net/assets/323/24eRHRP.svg) format('svg');
+    font-weight: 700;
+  }
+  
+  @font-face {
+    font-family: Averta;
+    src: url(//d1yepz0pwej23y.cloudfront.net/assets/323/1DViJbB.otf) format("opentype");
+    src: url(//d1yepz0pwej23y.cloudfront.net/assets/323/3HZKeKs.eot) format('embedded-opentype'),url(//d1yepz0pwej23y.cloudfront.net/assets/323/3-afYA7.woff) format('woff'),url(//d1yepz0pwej23y.cloudfront.net/assets/323/3hWY7eg.ttf) format('truetype'),url(//d1yepz0pwej23y.cloudfront.net/assets/323/1xISWJB.svg) format('svg');
+    font-weight: 100;
+  }
+  
+  body {
+    font-size: 62.5%;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(47,47,47,0.004);
+  }
+  
+  h2, p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Averta";
+  }
+  
+  h2 {
+    font-size: 3.2em;
+    color: #2f2f2f;
+    letter-spacing: -0.02em;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+  }
+  
+  .headline {
+    margin-top: -8px; /* Done to align the top of the Headlinw with the top of the pill */
+  }
+  
+  p {
+    font-weight: 500;
+    color: #2f2f2f;
+  }
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: #003663;
+  }
+  
+  .list-cell {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-top: 4px;
+    background: #ffffff;
+  }
+  
+  h1 {
+    font-family: Averta;
+    text-transform: uppercase;
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .cell-content {
+    display: flex;
+    width: calc(100% + 2px);
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0);
+    margin: 0px 0px 16px 0px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    position: relative;
+    left: -1px;
+  }
+  
+  .cell-content:last-child {
+    margin-bottom: 0px;
+  }
+  
+  /* Hover should happen in tandem with photo hover */ 
+  .cell-content:hover {
+    cursor: pointer;
+    border: 1px solid rgba(34, 34, 34, 0.1);
+    background: #fafafa;
+    border-radius: 2px;
+    -webkit-transform: scale(1.008, 1.008);
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-duration: 0.08s; /* Safari */
+      transition-duration: 0.08s;
+  }
+  
+  .item {
+    padding: 16px;
+  }
+  
+  .item-thumbnail {
+    background-color: #313131;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Adjust as needed */
+    flex-basis: 25%;
+    -webkit-flex-basis: 25%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 150px; /* Adjust height as needed */
+  }
+  
+  
+  .thumbnail-pill p { 
+    display: inline-block;
+    align-self: flex-start;
+    background: #003663;
+    color: #FFFFFF;
+    border: 4px solid #003663;
+    border-radius: 2px;
+    padding: 0px 6px 0px 6px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+  }
+  
+  .thumbnail-pill p:hover {
+    border: 4px solid #004c8b;
+    background: #004c8b;
+    cursor: pointer;
+  }
+  
+  .item-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 24px;
+  }
+  
+  .item-label h2 {
+    max-height: 78px;
+    overflow-y: hidden;
+  }
+  
+  .item-context {
+    font-size: 1.6em;
+    line-height: 150%;
+    display: block;
+    max-height: 72px;
+    overflow-y: hidden;
+  }
+  
+  .context-link {
+    padding-left: 4px;
+    font-weight: 600;
+  }
+  
+  .spacer {
+    height: 8px;
+  }
+  
+  .spacer2 {
+    height: 16px;
+  }
+  .label-description {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.4em;
+  }
+  
+  .label-description img {
+    margin-right: 4px;
+    width: 18px;
+    height:18px;
+  }
+  
+  @media (max-width: 480px) {
+    .item-label {
+      padding-left: 0px;
+    }
+    
+    .item-label h2 {
+      font-size: 1.6em;
+      line-height: 20px;
+    }
+    
+    .item-context {
+      display: none;
+    }
+    
+    .spacer2 {
+      display: none;
+    }
+    
+    .item-thumbnail {
+      margin: 16px;
+      border-radius: 3px;
+      min-height: 52px;
+    }
+    
+    .item-thumbnail p {
+      display: none;
+    }
+    
+    .headline {
+      margin-top: 0px;
+    }
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+    h1 {
+      font-size: 14px;
+      margin-bottom: 0px;
+    }
+    .cell-content {
+      margin-bottom: 8px;
+    }
+    .item-label {
+      padding-left: 0px;
+    }
+    
+    .item-label h2 {
+      font-size: 2.0em;
+      line-height: 24px;
+    }
+    
+    .item-context {
+      display: none;
+    }
+    
+    .spacer2 {
+      display: none;
+    }
+    
+    .item-thumbnail {
+      margin: 16px;
+      border-radius: 3px;
+      min-height: 72px;
+    }
+    
+    .item-thumbnail p {
+      display: none;
+    }
+    
+    .headline {
+      margin-top: 0px;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 992px) {
+    .item-thumbnail {
+      max-height: 128px;
+    }
+    .item-context {
+      display: none;
+    }
+    
+    .spacer2 {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 993px) and (max-width: 1200px) {
+  
+  }
+  
+  @media (min-width: 1200px) {
+    .item-thumbnail {
+      min-height: 212px;
+      max-width: 376px;
+    }
+  }

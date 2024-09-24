@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.news-detail {
+  position: relative; /* Ensure the pseudo-element is positioned correctly */
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 20px;
+  border-radius: 12px; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Noticia Text", serif;
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.news-detail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../public/rough-cement-texture.jpg'); /* Replace with your image path */
+  background-repeat: repeat; /* Repeat the image */
+  background-size: cover; /* Cover the entire area */
+  filter: blur(0.3px); /* Adjust the blur amount */
+  z-index: 0; /* Position behind the content */
+}
+
+.news-detail > * {
+  position: relative; /* Ensure content is above the pseudo-element */
+  z-index: 1; /* Bring content above the blurred background */
+}
+
+.back-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px; 
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #0056b3; 
+}
+
+.news-header {
+  text-align: center; /* Center align the header */
+}
+
+.news-header h1 {
+  font-weight: 700;
+  font-size: 2.5rem; 
+  margin: 0;
+  color: #333; 
+}
+
+.news-header p {
+  font-weight: 400;
+  color: gray;
+  font-size: 1.1rem; 
+}
+
+.news-image {
+  text-align: center; /* Center align the image */
+}
+
+.news-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px; 
+  margin-top: 20px;
+}
+
+.news-content {
+  line-height: 1.8; 
+  margin-top: 20px;
+  font-size: 1.1rem; 
+  color: #555; 
+}
+
+.news-content p {
+  text-align: justify; /* Justify text alignment for better readability */
+  margin-bottom: 15px; /* Add spacing between paragraphs */
+}
+
+.loading, .error, .not-found {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem; 
+}
