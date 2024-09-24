@@ -59,7 +59,7 @@ const Carousel = () => {
         from: fromDate,
         to: toDate,
         pageSize: 3,
-        apiKey:"09b7f7ca19274739a729efbde426cdde"
+        apiKey:"debb061ae90b454f8fc1dc5daa97f6ec"
       });
   
       if (category && category.trim() !== '') {

@@ -35,7 +35,7 @@ const Navbar = (props) => {
     };
 
     return (
-        <header className="header">
+        <header className="header bg-[#0000001a] backdrop-blur-[4px] border-b-1">
             <img
                 src="./Untitled.png"
                 className="header-logo"
@@ -47,7 +47,7 @@ const Navbar = (props) => {
                 <div></div>
             </div>
             <nav className={`menu ${isMenuOpen ? "active" : ""}`}>
-                <ul className="menu-list">
+                <ul className="menu-list ">
                     {nav.map((item) => (
                         <li className="menu-list-item" key={item}>
                             <Link className="menu-link" to={`/${item}`}>

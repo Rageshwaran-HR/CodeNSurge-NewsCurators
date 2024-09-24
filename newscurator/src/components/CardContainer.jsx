@@ -24,7 +24,7 @@ const CardContainer = ({ category = "general" }) => { // Default to "general" if
           from: fromDate,
           to: toDate,
           pageSize: 7,
-          apiKey: "09b7f7ca19274739a729efbde426cdde" // Include the API key here
+          apiKey: "debb061ae90b454f8fc1dc5daa97f6ec" // Include the API key here
         });
     
         if (category && category.trim() !== '' && category !== "general") {
